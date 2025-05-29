@@ -5,14 +5,14 @@ import botImg from "../assets/bot.webp";
 
 const About = () => {
   return (
-    <div className='flex flex-row w-full px-5 justify-between'>
+    <div className='flex flex-row w-full px-10  justify-between'>
           
           <div className='flex flex-col py-4 '>
 
         {aboutobj.map((item)=>(
             <div>
-           <li key={item.id} className='flex flex-col px-1  px-4 gap-4'>
-            <div className='flex flex-col w-fit px-2 py-2 rounded-lg mb-4 bg-[#18181b] text-xl text-white '>
+           <li key={item.id} className='flex flex-col px-1 items-center    gap-4'>
+            <div className='flex flex-col w-fit px-2 py-2 rounded-lg mb-4 bg-[#334155] text-xl text-white '>
             
            <p className='text-base'>{item.description}</p>
            </div>
@@ -30,7 +30,7 @@ const About = () => {
         </div>
           <div className=''>
 
-           <img 
+           <img className=''
            src={botImg}>
 
            </img>

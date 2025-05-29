@@ -8,7 +8,7 @@ import {
     useTransform,
 } from "motion/react"
 import { useRef } from "react"
-import image from "../assets/image.webp"
+import image from "../assets/bot2.webp"
 
 function useParallax(value, distance) {
     return useTransform(value, [0, 1], [-distance, distance])
