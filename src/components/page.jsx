@@ -8,7 +8,8 @@ import {
     useTransform,
 } from "motion/react"
 import { useRef } from "react"
-import image from "../assets/bot2.webp"
+import image from "../assets/image.jpg"
+
 
 function useParallax(value, distance) {
     return useTransform(value, [0, 1], [-distance, distance])
@@ -31,7 +32,7 @@ function StyleSheet({enablesnap}) {
         }
 
         .img {
-            width: 300px;
+            width: 600px;
             height: 400px;
             margin: 20px;
             background: #f5f5f5;
@@ -81,6 +82,7 @@ function StyleSheet({enablesnap}) {
     `}</style>
     )
 }
+
 
 function Image({ id }) {
     const ref = useRef(null);

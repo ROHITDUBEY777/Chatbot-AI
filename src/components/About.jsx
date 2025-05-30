@@ -5,7 +5,7 @@ import botImg from "../assets/bot.webp";
 
 const About = () => {
   return (
-    <div className='flex flex-row w-full px-10  justify-between'>
+    <div className='flex flex-row  px-10 w-full justify-between'>
           
           <div className='flex flex-col py-4 '>
 

@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import { motion  } from 'motion/react';
 import axios from 'axios';
+"use client"
+
+
 
 
 const API = () => {
@@ -8,14 +11,44 @@ const API = () => {
   const[reply,setreply] = useState( " ");
   const[loading,setLoading] = useState( false ); 
 
-  const handlesubmit = async () => {
+
+
+  const handlesubmit = async (e) => {
+  e.preventDefault()
    setLoading(true);
+   if(loading) return  LoadingThreeDotsJumping()
    const res = await askGemini(input);
    setreply(res);
    setLoading(false);
 
   }
   
+  function LoadingThreeDotsJumping() {
+    const dotVariants = {
+        jump: {
+            y: -30,
+            transition: {
+                duration: 0.8,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+            },
+        },
+    }
+
+    return (
+        <motion.div
+            animate="jump"
+            transition={{ staggerChildren: -0.2, staggerDirection: -1 }}
+            className="container"
+        >
+            <motion.div className="dot" variants={dotVariants} />
+            <motion.div className="dot" variants={dotVariants} />
+            <motion.div className="dot" variants={dotVariants} />
+            <StyleSheet />
+        </motion.div>
+    )
+}
 async function askGemini(input) {
   
 
@@ -42,20 +75,20 @@ return response.data.candidates[0].content.parts[0].text;
 }
 
   return (
-    <div className='flex flex-col w-[32rem] px-16  justify-center  rounded-md bg-[#d4d4d8]'>
+    <div className='flex flex-col  text-white rounded-xl px-16 py-6 w-[41rem]  items-center justify-center bg-[#7e22ce]'>
       {reply && (
-        <div className='mt-[4vh] p-4 bg-[#d4d4d8] rounded shadow '>
+        <div className='mt-[4vh] p-4 bg-[#7e22ce] rounded shadow '>
           <h2 className='text-lg font-bold text-black  mb-2 ' >Gemini's Response : </h2>
           <p className='text-black'>{reply}</p>
           </div>
       )}
-      <div className='flex flex-row gap-10 '>
+      <div className='flex flex-row  justify-between '>
 
       <input type="text"  placeholder='Ask a question ' 
         value={input}
         onChange={(e)=> setinput(e.target.value)}
-        className='w-full text-black border bg-[#d4d4d8] px-4 py-2 '  />
-        <motion.button type='button' whileHover={{scale:1.1}}  onClick={handlesubmit} className='bg-blue-600 border text-black w-full '> {loading ? "Thinking....." : "Search"}  </motion.button>
+        className='w-full text-black border bg-[#7e22ce] px-4 py-2 '  />
+        <motion.button type='button' whileHover={{scale:1.1}}  onClick={handlesubmit} className='bg-blue-600 border text-black w-1/3 '> {loading ? "Thinking....." : "Search"}  </motion.button>
         </div>
     </div>
   )
