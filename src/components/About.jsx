@@ -10,7 +10,7 @@ const About = () => {
           <div className='flex flex-col py-4 '>
 
         {aboutobj.map((item)=>(
-            <div>
+            <div key={item.id}>
            <li key={item.id} className='flex flex-col px-1 items-center    gap-4'>
             <div className='flex flex-col w-fit px-2 py-2 rounded-lg mb-4 bg-[#334155] text-xl text-white '>
             
