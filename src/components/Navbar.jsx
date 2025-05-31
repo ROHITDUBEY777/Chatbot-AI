@@ -41,6 +41,13 @@ const Navbar = () => {
           
                  sign-in
                 </motion.button> 
+                <motion.button   whileTap={{scale:1.2 }} className='   hover:bg-[#f4f4f5] hover:text-black md:text-base lg:text-xl rounded-full  md:flex  opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2 '>
+                      
+                             Get Started
+                            </motion.button>    
+           
+    
+        
          
             <button onClick={()=>{controlmenu()}}>
             <IoMdMenu 

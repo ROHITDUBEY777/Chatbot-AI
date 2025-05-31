@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 import About from './components/About';
 import API from './components/API';
+import Cards from './components/cards';
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
       <Hero />
     
       <API />
+      <Cards />
       <About />
       <Footer/>
           

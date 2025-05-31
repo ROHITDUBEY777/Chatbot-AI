@@ -44,7 +44,7 @@ const  Hero = () => {
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}
             transition={{duration : 0.5 , ease : "easeOut"}}
-            className='metalic-text text-white text-3xl font-[Poppins]  font-bold opacity-80 md:text-6xl text-center  mt-[32vh]'>CHATBOT   </motion.h1>
+            className='metalic-text text-white text-3xl  font-bold opacity-80 md:text-6xl text-center  mt-[32vh]'>CHATBOT   </motion.h1>
             <div className='flex flex-col  lg:flex-row px-4 w-full  justify-between  md:px-10 mt-[6vh]'>
             
              <motion.img 
@@ -61,13 +61,7 @@ const  Hero = () => {
              className=' mt-[4vh] md:mt-[11vh] lg:text-base xl:text-xl    opacity-70  text-sm  md:text-base  text-center px-3    md:px-16 text-white ' >Welcome to our Chatbot AI - an intelligent, conversational assistant designed to provide instant, reliable, and human-like interactions. Built with advanced natural language processing (NLP) and machine learning technologies, this AI is capable of understanding context, answering questions, and assisting users in real-time across a wide range of topics.</motion.p>  
              
              </div>
-             <motion.button   whileTap={{scale:1.2 }} className='flex flex-col  hover:bg-[#f4f4f5] hover:text-black md:text-base lg:text-xl rounded-full  md:flex  opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2 '>
-                      
-                             Get Started
-                            </motion.button>    
-           
-    
-        
+             
 
 
            
