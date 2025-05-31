@@ -12,7 +12,7 @@ function App() {
 
   return (
     
-<div className="absolute top-0 px-0 w-full bg-[#09090b] ">
+<div className="absolute top-0 px-0 md:w-full w-full bg-[#09090b] ">
 
       <Hero />
     

@@ -1,7 +1,7 @@
 import {useState,useEffect,useRef} from 'react'
 import Navbar from './Navbar';
 import {   motion ,useAnimate,useAnimation,useInView } from 'framer-motion';
-import image from "../assets/AI.jpg"
+import Ai from "../assets/AI.jpg"
 
 
 
@@ -36,13 +36,22 @@ const  Hero = () => {
     },[inview,scrollingdown,controls]);
 
     return (
-        <div id='Hero' className='min-h-screen bg-[#09090b]  w-full   '>
+        <div  className=' min-h-screen min-w-screen w-full bg-[#09090b]    '>
           
 
             <Navbar />
-            <div className='flex flex-col  lg:flex-row px-4 w-fit  justify-between  md:px-10 mt-[36vh]'>
-
-             <img src={image} className='rounded-lg  w-3/2 md:w-3/2 lg:w-1/2' />
+            <motion.h1 
+            initial = {{opacity:0,y:20}}
+            animate = {{opacity:1,y:0}}
+            transition={{duration : 0.5 , ease : "easeOut"}}
+            className='metalic-text text-3xl font-[Poppins]  font-bold opacity-80 md:text-6xl text-center text-white mt-[32vh]'>CHATBOT AI  </motion.h1>
+            <div className='flex flex-col  lg:flex-row px-4 w-full   justify-between  md:px-10 mt-[6vh]'>
+            
+             <motion.img 
+              initial = {{opacity : 0 , y:20 }}
+              animate = {{opacity:1,y:0}}
+              transition={{duration : 0.5 , ease : "easeOut"}}
+              src={Ai} className='rounded-lg  w-3/2 md:w-3/2 lg:w-1/2' />
             <motion.p
              ref={ref}
              initial={{opacity:0,y:20}}

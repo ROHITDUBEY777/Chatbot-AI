@@ -17,8 +17,10 @@ const API = () => {
   const handlesubmit = async (e) => {
 
    
-   if(input === " " ) alert('Please ask a question before searching');
-   e.preventDefault();
+   if(input === " " ){
+     alert('Please ask a question before searching');
+    e.preventDefault();
+   }
   
   
    setLoading(true);
@@ -59,25 +61,29 @@ return response.data.candidates[0].content.parts[0].text;
 }
 
   return (
-    <div className='flex flex-row justify-center min-h-screen '>
-      
-    <div className='flex flex-col w-1/1 px-4 mx-4  py-6 md:min-w-2/3  h-full  md:my-10 md:mx-10 lg:mx-23    text-black rounded-xl    md:px-10 md:py-10  bg-[#facc15]'>
+    <div className='flex  flex-col w-full items-center font-Poppins  border-white justify-center min-h-screen '>
+      <div className='items-center justify-center  w-full '>
+
+    <motion.p className='poppins flex  mb-4 text-base opacity-80 md:mx-10  md:px-8 md:w-fit md:text-xl lg:text-2xl text-center text-white'>Start a conversation with your AI assistant - fast, simple, and smart answers await.</motion.p>
+
+    <div className='flex flex-col w-full    justify-center md:w-[41rem] md:mx-15 lg:w-9/10  px-4     py-6    mb-8 md:px-16 md:py-10     text-white rounded-xl     bg-[#1e293b]'>
       {reply && (
-        <div className='mt-[4vh] p-4bg-[#57534e] rounded shadow '>
+        <div className='mt-[4vh] p-4 rounded shadow '>
           <h1 className='text-base md:text-xl mb-2'>Ask anything, we’ve got answers.</h1>
-          <h2 className='text-base  text-black  mb-2 ' > Response : </h2>
-          <p className='text-black text-sm py-4 '>{reply}</p>
+          <h2 className='text-base  text-white   ' > Response : </h2>
+          <p className='text-white md:text-base text-xs py-4 '>{reply}</p>
           </div>
       )}
-      <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between '>
+      <div className='flex flex-col md:flex-row md:gap-8 lg:flex-row xl:flex-row justify-between '>
 
       <input type="text"  placeholder='Ask a question ' 
         value={input}
         onChange={(e)=> setinput(e.target.value)}
-        className='text-base text-black border bg-[#334155] w-full mt-[2vh] px-4 py-2 '  />
-        <motion.button type='button' whileTap={{scale:1.1}}  onClick={handlesubmit} className='mt-[2vh] bg-blue-600 bordertext-black px-3  w-full md:w-1/3 '> {loading ? "Thinking....." : "Search"}  </motion.button>
+        className='text-base text-black border bg-[#c4b5fd] w-full md:w-[42rem] mt-[2vh] px-4 py-2 '  />
+        <motion.button type='button' whileTap={{scale:1.1}} onClick={(e)=>handlesubmit(e.preventDefault())} className='mt-[3vh]  border hover:bg-[#09090b] hover:text-white cursor-pointer text-white px-4 py-3 md:py-3   w-full md:w-1/4 '> {loading ? "Thinking....." : "Search"}  </motion.button>
         </div>
     </div>
+        </div>
         </div>
   )
 }

@@ -5,7 +5,7 @@ import botImg from "../assets/bot.webp";
 
 const About = () => {
   return (
-    <div className='flex flex-row  px-10 w-full justify-between'>
+    <div className='flex flex-col md:flex-col lg:flex-col xl:flex-row justify-center items-center  px-3 xl:px-10 w-full xl:justify-between'>
           
           <div className='flex flex-col py-4 '>
 
@@ -30,7 +30,7 @@ const About = () => {
         </div>
           <div className=''>
 
-           <img className=''
+           <img className='justify-center'
            src={botImg}>
 
            </img>

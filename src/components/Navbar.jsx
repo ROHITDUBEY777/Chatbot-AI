@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoMdMenu } from "react-icons/io";
 
-import {m, motion} from 'motion/react';
+import {easeIn, m, motion} from 'motion/react';
 
 const Navbar = () => {
 
@@ -16,15 +16,18 @@ const Navbar = () => {
   function controlmenu  () {
       setmenu(!menu);
   }
+  function closePopup () {
+    setmenu(false);
+  }
   return (
     <div>
      <nav className='flex flex-row  text-white top-0 justify-center fixed backdrop-blur-3xl z-50  px-3  py-5   w-full '>
-        <ul className='flex flex-row text-2xl  justify-between  w-full   '>
+        <ul className='flex flex-row text-2xl  justify-between md:w-screen w-full   '>
             
 
 
            
-            <li className='cursor-normal text-xl md:text-xl'>Chatbot AI</li>
+            <li className=' cursor-normal   text-xl md:text-xl'>Chatbot AI</li>
             <div className='   flex-row md:flex md:text-xl lg:text-2xl  md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
 
             <a ><li className='cursor-pointer opacity-70 hover:opacity-100'>Home </li></a>
@@ -50,14 +53,26 @@ const Navbar = () => {
 
              {/* mobile navbar  */}
              {menu && (
-             <div  className={`absolute flex md:hidden flex-col z-50 backdrop:blur-3xl duration-300 mx-2 h-screen w-fit px-6 py-5 gap-6 top-0 right-0 mt-[11vh]     transform transition-transform  border`}>
-              <ul className='flex flex-col gap-4 backdrop-blur-3xl '>
-                 <a ><li className='cursor-pointer opacity-70 hover:opacity-100'>Home </li></a>
+             <motion.div 
+              initial={{opacity:0 , y:20}}
+              animate = {{opacity:100 ,y:20}}
+               transition={{duration:0.6,ease:"easeIn"}}
+
+               className={`absolute flex md:hidden bg-[#0f172a]  flex-col backdrop-blur-2xl z-50 duration-300 mx-2 h-screen w-fit px-6 py-5 gap-6 top-0 right-0    transform transition-transform  `}>
+                 <button onClick={()=>
+                closePopup()
+              } className="absolute  cursor-pointer  scale-125 top-4 left-4 text-white opacity-60 hover:opacity-100  transition duration-300">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>    
+              </button>
+              <ul className='flex flex-col mt-[9vh] gap-2 '>
+            <a ><li className='cursor-pointer opacity-70 hover:opacity-100'>Home </li></a>
             <li className='cursor-pointer opacity-70 hover:opacity-100'>About </li>
             <li className='cursor-pointer opacity-70 hover:opacity-100'>Service </li>
             <li className='cursor-pointer opacity-70 hover:opacity-100'>Contact Us  </li>
               </ul>
-             </div>
+             </motion.div>
              )}
           </div>
           
