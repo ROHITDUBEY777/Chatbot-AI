@@ -21,13 +21,13 @@ const Navbar = () => {
   }
   return (
     <div>
-     <nav className='flex flex-row  text-white top-0 justify-center fixed backdrop-blur-3xl z-50  px-3  py-5   w-full '>
+     <nav className='flex flex-row  text-white top-0 justify-center fixed backdrop-blur-3xl z-50  px-6  py-5   w-full '>
         <ul className='flex flex-row text-2xl  justify-between md:w-screen w-full   '>
             
 
 
            
-            <li className=' cursor-normal   text-xl md:text-xl'>Chatbot AI</li>
+            <li className=' cursor-normal   text-xl md:text-xl'>CHATBOT </li>
             <div className='   flex-row md:flex md:text-xl lg:text-2xl  md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
 
             <a ><li className='cursor-pointer opacity-70 hover:opacity-100'>Home </li></a>
@@ -37,14 +37,11 @@ const Navbar = () => {
             </div>
           <div className='flex gap-2'>
 
- <motion.button  whileHover={{scale:0.7}} whileTap={{scale:1.2 }} className='md:text-base lg:text-xl xl:text-xl hidden md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2 rounded-lg '>
+ <motion.button  whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-[#f4f4f5] hover:text-black hidden md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2  '>
           
                  sign-in
                 </motion.button> 
-          <motion.button  whileHover={{scale:0.7}} whileTap={{scale:1.2 }} className='md:text-base lg:text-xl xl:text-xl hidden md:flex  opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2 rounded-lg '>
-          
-                 Get Started
-                </motion.button>  
+         
             <button onClick={()=>{controlmenu()}}>
             <IoMdMenu 
           

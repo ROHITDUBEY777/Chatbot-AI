@@ -36,7 +36,7 @@ const  Hero = () => {
     },[inview,scrollingdown,controls]);
 
     return (
-        <div  className=' min-h-screen min-w-screen w-full bg-[#09090b]    '>
+        <div  className=' min-h-screen  w-full    '>
           
 
             <Navbar />
@@ -44,23 +44,28 @@ const  Hero = () => {
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}
             transition={{duration : 0.5 , ease : "easeOut"}}
-            className='metalic-text text-3xl font-[Poppins]  font-bold opacity-80 md:text-6xl text-center text-white mt-[32vh]'>CHATBOT AI  </motion.h1>
-            <div className='flex flex-col  lg:flex-row px-4 w-full   justify-between  md:px-10 mt-[6vh]'>
+            className='metalic-text text-white text-3xl font-[Poppins]  font-bold opacity-80 md:text-6xl text-center  mt-[32vh]'>CHATBOT   </motion.h1>
+            <div className='flex flex-col  lg:flex-row px-4 w-full  justify-between  md:px-10 mt-[6vh]'>
             
              <motion.img 
               initial = {{opacity : 0 , y:20 }}
               animate = {{opacity:1,y:0}}
               transition={{duration : 0.5 , ease : "easeOut"}}
-              src={Ai} className='rounded-lg  w-3/2 md:w-3/2 lg:w-1/2' />
+              src={Ai} className='rounded-lg bg-[#f5f5f5]  w-3/2 md:w-3/2 lg:w-1/2' />
             <motion.p
              ref={ref}
              initial={{opacity:0,y:20}}
              animate={{opacity:0.8 , y:0}}
              transition={{ duration:0.6 , ease : 'easeOut'}}
              
-             className=' mt-[4vh] md:mt-[11vh] lg:text-base xl:text-xl  opacity-70  text-sm  md:text-base  text-center px-3    md:px-16 text-white ' >Welcome to our Chatbot AI - an intelligent, conversational assistant designed to provide instant, reliable, and human-like interactions. Built with advanced natural language processing (NLP) and machine learning technologies, this AI is capable of understanding context, answering questions, and assisting users in real-time across a wide range of topics.</motion.p>    
-           
+             className=' mt-[4vh] md:mt-[11vh] lg:text-base xl:text-xl    opacity-70  text-sm  md:text-base  text-center px-3    md:px-16 text-white ' >Welcome to our Chatbot AI - an intelligent, conversational assistant designed to provide instant, reliable, and human-like interactions. Built with advanced natural language processing (NLP) and machine learning technologies, this AI is capable of understanding context, answering questions, and assisting users in real-time across a wide range of topics.</motion.p>  
+             
              </div>
+             <motion.button   whileTap={{scale:1.2 }} className='flex flex-col  hover:bg-[#f4f4f5] hover:text-black md:text-base lg:text-xl rounded-full  md:flex  opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2 '>
+                      
+                             Get Started
+                            </motion.button>    
+           
     
         
 

@@ -2,6 +2,7 @@ import React from 'react'
 
 import aboutobj from '../info/about';
 import botImg from "../assets/bot.webp";
+import { motion ,  } from 'framer-motion';
 
 const About = () => {
   return (
