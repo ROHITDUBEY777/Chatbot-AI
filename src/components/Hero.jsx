@@ -44,7 +44,7 @@ const  Hero = () => {
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}
             transition={{duration : 0.5 , ease : "easeOut"}}
-            className='metalic-text text-white text-5xl font-[Poppins]  font-bold opacity-80 md:text-6xl text-center  mt-[32vh]'>CHATBOT   </motion.h1>
+            className='poppins text-white text-5xl   font-bold opacity-80 md:text-5xl text-center  mt-[32vh]'>CHATBOT   </motion.h1>
             <div className='flex flex-col  lg:flex-row px-4 w-full  justify-between  md:px-10 mt-[6vh]'>
             
              <motion.img 
