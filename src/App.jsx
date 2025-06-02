@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 
 
 import Footer from './components/Footer';
-import About from './components/About';
+
 import API from './components/API';
 import Cards from './components/cards';
 
@@ -13,13 +13,13 @@ function App() {
 
   return (
     
-<div className="absolute top-0 px-0 md:w-full w-full bg-[#09090b] ">
+<div className="absolute top-0 px-0 md:w-full w-full  bg-[#09090b] ">
 
       <Hero />
     
       <API />
       <Cards />
-      <About />
+     
       <Footer/>
           
   

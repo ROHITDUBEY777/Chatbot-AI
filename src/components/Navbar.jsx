@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
            
-            <li className=' cursor-normal   text-xl md:text-xl'>CHATBOT </li>
+            <li className='  font-bold cursor-normal   text-xl md:text-xl'>CHATBOT </li>
             <div className='   flex-row md:flex md:text-xl lg:text-2xl  md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
 
             <a ><li className='cursor-pointer opacity-70 hover:opacity-100'>Home </li></a>
@@ -37,11 +37,11 @@ const Navbar = () => {
             </div>
           <div className='flex gap-2'>
 
- <motion.button  whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-[#f4f4f5] hover:text-black hidden md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2  '>
+ <motion.button  whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-yellow-400 px-4 hover:text-black hidden md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white  py-2  '>
           
                  sign-in
                 </motion.button> 
-                <motion.button   whileTap={{scale:1.2 }} className='   hover:bg-[#f4f4f5] hover:text-black md:text-base lg:text-xl rounded-full  md:flex  opacity-70 hover:opacity-100 border cursor-pointer   text-white px-3 py-2 '>
+                <motion.button   whileTap={{scale:1.2 }} className=' hidden  hover:bg-yellow-400 px-4 hover:text-black md:text-base lg:text-xl rounded-full  md:flex  opacity-70 hover:opacity-100 border cursor-pointer   text-white  py-2 '>
                       
                              Get Started
                             </motion.button>    

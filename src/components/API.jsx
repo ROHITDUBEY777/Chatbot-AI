@@ -1,5 +1,5 @@
 import {useState,useEffect,useRef} from 'react'
-import {  inView, motion,useAnimation , useInView  } from 'framer-motion';
+import {  easeIn, inView, motion,useAnimation , useInView  } from 'framer-motion';
 import axios from 'axios';
 import { IoSend } from "react-icons/io5";
 "use client"
@@ -95,17 +95,22 @@ return response.data.candidates[0].content.parts[0].text;
   return (
     <div className='flex  flex-col w-full items-center font-Poppins  border-white justify-center min-h-screen '>
       <div className='items-center justify-center  w-full '>
+    <motion.h1 
 
+     initial={{opacity:0,y:40}}
+     animate={{opacity:1,y:0}}
+     transition={{duration:0.6,ease:"easeIn"}}
+    className='poppins flex text-6xl text-white text-center md:mb-10  justify-center '>Chat smarter with us.</motion.h1> 
     <motion.p 
      ref={reftext}
-     initial = {{opacity:0 , y: 20}}
+     initial = {{opacity:0 , y: 40}}
      animate={controlstext}
      transition={{duration:0.5,ease: "easeOut"}}
-    className='poppins flex  mb-4 text-base opacity-80 md:mx-10  md:px-8 md:w-fit md:text-xl lg:text-2xl text-center text-white'>Start a conversation with your AI assistant - fast, simple, and smart answers await.</motion.p>
+    className='poppins flex  mb-6 text-base opacity-80 md:mx-10   md:px-8 md:w-fit md:text-xl lg:text-2xl text-center text-white'>Start a conversation with your AI assistant - fast, simple, and smart answers await.</motion.p>
 
     <motion.div 
      ref={refcard}
-     initial= {{opacity: 0 , y: 20}}
+     initial= {{opacity: 0 , y: 40}}
      animate={controlscard}
      transition={{duration:0.6 ,ease: "easeOut"}}
     
@@ -123,7 +128,7 @@ return response.data.candidates[0].content.parts[0].text;
         value={input}
         onChange={(e)=> setinput(e.target.value)}
         className='text-base text-black border bg-[#c4b5fd] w-full md:w-[42rem] mt-[2vh] px-4 py-2 '  />
-        <motion.button type='button' whileTap={{scale:1.1}} onClick={(e)=>handlesubmit(e.preventDefault())} className='mt-[3vh] rounded-full border hover:bg-[#09090b] hover:text-white cursor-pointer text-white px-4 py-3 md:py-3   w-full md:w-1/6 '> {loading ? "Thinking....." : "Search"}  </motion.button>
+        <motion.button type='button' whileTap={{scale:1.1}} onClick={(e)=>handlesubmit(e.preventDefault())} className='mt-[3vh] rounded-full border hover:bg-yellow-400  hover:text-black cursor-pointer text-white px-4 py-3 md:py-3   w-full md:w-1/6 '> {loading ? "Thinking....." : "Search"}  </motion.button>
         </div>
     </motion.div>
         </div>

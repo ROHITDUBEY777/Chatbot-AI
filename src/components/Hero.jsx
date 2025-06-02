@@ -44,7 +44,7 @@ const  Hero = () => {
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}
             transition={{duration : 0.5 , ease : "easeOut"}}
-            className='metalic-text text-white text-3xl  font-bold opacity-80 md:text-6xl text-center  mt-[32vh]'>CHATBOT   </motion.h1>
+            className='metalic-text text-white text-5xl font-[Poppins]  font-bold opacity-80 md:text-6xl text-center  mt-[32vh]'>CHATBOT   </motion.h1>
             <div className='flex flex-col  lg:flex-row px-4 w-full  justify-between  md:px-10 mt-[6vh]'>
             
              <motion.img 
@@ -58,7 +58,7 @@ const  Hero = () => {
              animate={{opacity:0.8 , y:0}}
              transition={{ duration:0.6 , ease : 'easeOut'}}
              
-             className=' mt-[4vh] md:mt-[11vh] lg:text-base xl:text-xl    opacity-70  text-sm  md:text-base  text-center px-3    md:px-16 text-white ' >Welcome to our Chatbot AI - an intelligent, conversational assistant designed to provide instant, reliable, and human-like interactions. Built with advanced natural language processing (NLP) and machine learning technologies, this AI is capable of understanding context, answering questions, and assisting users in real-time across a wide range of topics.</motion.p>  
+             className=' mt-[4vh] md:mt-[11vh] lg:text-xl xl:text-xl    opacity-70  text-base  md:text-xl  text-center px-3    md:px-16 text-white ' >Welcome to our Chatbot AI - an intelligent, conversational assistant designed to provide instant, reliable, and human-like interactions. Built with advanced natural language processing (NLP) and machine learning technologies, this AI is capable of understanding context, answering questions, and assisting users in real-time across a wide range of topics.</motion.p>  
              
              </div>
              

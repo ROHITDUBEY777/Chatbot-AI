@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
     <div className='w-full text-white  backdrop-blur-xl z-50 text-center py-3'>
-      <p className='font-Poppins font-bold text-base'> powered by Chatbot-ai </p>
+      <p className=' font-bold text-base'> powered by Chatbot-ai </p>
     </div>
   
     </>
