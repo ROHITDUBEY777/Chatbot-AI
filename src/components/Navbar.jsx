@@ -30,10 +30,10 @@ const Navbar = () => {
             <li className='  font-bold cursor-normal   text-xl md:text-xl'>CHATBOT </li>
             <div className='   flex-row md:flex md:text-xl lg:text-2xl  md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
 
-            <a ><li className='cursor-pointer opacity-70 hover:opacity-100'>Home </li></a>
-            <li className='cursor-pointer opacity-70 hover:opacity-100'>About </li>
-            <li className='cursor-pointer opacity-70 hover:opacity-100'>Service </li>
-            <li className='cursor-pointer opacity-70 hover:opacity-100'>Contact Us  </li>
+            <a ><li className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>Home </li></a>
+            <li className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>About </li>
+            <li className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Service </li>
+            <li className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Contact Us  </li>
             </div>
           <div className='flex gap-2'>
 
@@ -41,12 +41,7 @@ const Navbar = () => {
           
                  sign-in
                 </motion.button> 
-                <motion.button   whileTap={{scale:1.2 }} className=' hidden  hover:bg-yellow-400 px-4 hover:text-black md:text-base lg:text-xl rounded-full  md:flex  opacity-70 hover:opacity-100 border cursor-pointer   text-white  py-2 '>
-                      
-                             Get Started
-                            </motion.button>    
-           
-    
+               
         
          
             <button onClick={()=>{controlmenu()}}>
