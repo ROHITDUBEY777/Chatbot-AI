@@ -4,7 +4,7 @@ import {motion,useAnimation ,easeInOut, useInView } from "framer-motion";
 import { useEffect } from 'react';
 
 
-const cards = () => {
+const Cards = () => {
 const refcard = useRef(null);
 const reftext = useRef(null);
 const [prevscroll,setprevscroll] = useState(0);
@@ -69,4 +69,4 @@ const [scrollingdown,setscrollingdown]   = useState(false);
   )
 }
 
-export default cards
+export default Cards
