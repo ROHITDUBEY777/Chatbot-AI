@@ -6,7 +6,8 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 
 import API from './components/API';
-import Cards from './components/cards.jsx';
+import Cards from './components/cards';
+
 
 function App() {
   
@@ -18,7 +19,7 @@ function App() {
       <Hero />
     
       <API />
-      <Cards />
+       <Cards />
      
       <Footer/>
   </div>
