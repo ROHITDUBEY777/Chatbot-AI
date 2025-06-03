@@ -87,13 +87,13 @@ return response.data.candidates[0].content.parts[0].text;
  }
  catch(err){
   console.error("Gemini Error",err);
-  return "Oops! something went wrong" ;
+  return "Oops! something went wrong " ;
   
  }
 }
 
   return (
-    <div className='flex  flex-col w-full items-center  mt-[15vh]   justify-center min-h-screen '>
+    <div id='service' className='flex  flex-col w-full items-center  mt-[15vh]   justify-center min-h-screen '>
       <div className='items-center justify-center  w-full '>
     <motion.h1 
 
@@ -117,7 +117,7 @@ return response.data.candidates[0].content.parts[0].text;
     className='flex flex-col w-full    justify-center md:w-[41rem] md:mx-15 lg:w-9/10 px-4 hover:border-1  z-10 hover:border-yellow-400 border    py-6    mb-8 md:px-16 md:py-10     text-white rounded-xl     bg-[#1e293b]'>
       {reply && (
         <div className='mt-[4vh] p-4 rounded shadow '>
-          <h1 className='text-base md:text-xl mb-2'>Ask anything, we’ve got answers.</h1>
+          <h1 className='text-base text-white md:text-xl mb-2'>Ask anything, we’ve got answers.</h1>
           <h2 className='text-base  text-white   ' > Response : </h2>
           <p className='text-white md:text-base text-base py-4 '>{"Thinking" ? reply : "loading"}</p>
           </div>

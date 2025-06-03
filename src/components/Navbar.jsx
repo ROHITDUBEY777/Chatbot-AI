@@ -4,7 +4,7 @@ import { FaApple } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
 import { FaGoogle } from "react-icons/fa";
 
-import {easeIn, m, motion} from 'motion/react';
+import {domAnimation, easeIn, m, motion} from 'motion/react';
 
 const Navbar = () => {
 
@@ -31,11 +31,29 @@ const Navbar = () => {
   function closePopup2 () {
     setpopup(false);
   }
-  
-  function login() {
-    console.log(setinput);
-  }
 
+
+  function handlescroll (id) {
+  
+    const element = document.getElementById(id);
+      if(element) {
+    element.scrollIntoView({behavior: "smooth" })
+     
+    }
+  }
+  
+  function handlescroll2 (id) {
+  
+    const element = document.getElementById(id);
+      if(element) {
+    element.scrollIntoView({behavior: "smooth" })
+     
+    }
+    setmenu(false);
+    
+  }
+  
+ 
   return (
     <div>
      <nav className='flex flex-row  text-white top-0 justify-center fixed backdrop-blur-3xl z-50  px-6  py-5   w-full '>
@@ -47,20 +65,20 @@ const Navbar = () => {
             <li className='  font-bold cursor-normal   text-xl md:text-xl'>CHATBOT </li>
             <div className='   flex-row md:flex md:text-xl lg:text-2xl  md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
 
-            <a ><li className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>Home </li></a>
-            <li className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>About </li>
-            <li className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Service </li>
-            <li className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Contact Us  </li>
+            <li onClick={()=>handlescroll('Home')} className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>Home </li>
+            <li onClick={()=>handlescroll('About')} className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>About </li>
+            <li onClick={()=>handlescroll('service')} className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Service </li>
+            <li onClick={()=>handlescroll('Contact')} className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Contact Us  </li>
             </div>
           <div className='flex gap-2'>
 
  <motion.button   onClick={()=>
-               openpopup() } whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-yellow-400 px-4 hover:text-black hidden md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white  py-2  '>
+               openpopup() } whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-yellow-400 px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white   md:py-2  '>
           
                 log-in
                 </motion.button> 
                {/* popup for sign in */}
-               <div className={`flex bg-[#171717]  rounded-lg absolute  py-9 h-fit right-4 ${popup ? "opacity-100 scale-100 ":"opacity-0 hidden invisible"} `}>
+               <div className={`flex bg-[#171717]  rounded-lg absolute z-50  py-9 h-fit  right-4 ${popup ? "opacity-100 scale-100 ":"opacity-0 hidden invisible"} `}>
                <div className='px-10 text-white '>
                       <button onClick={()=>
                       closePopup2()
@@ -89,7 +107,7 @@ const Navbar = () => {
                '
                className='w-full border  border-white py-1 text-base px-4 '
                />
-               <motion.button whileTap={{scale:1.1}} onClick={login()} className='w-full cursor-pointer  text-base text-black bg-[#fafafa] py-1 rounded-md mt-[2vh]'>login</motion.button>
+               <motion.button whileTap={{scale:1.1}} className='w-full cursor-pointer  text-base text-black bg-[#fafafa] py-1 rounded-md mt-[2vh]'>login</motion.button>
                <p className='text-base opacity-70 text-center mt-2'>or continue with </p>
                <div className='flex flex-row px-2 py-4 justify-between w-full '>
                 <FaApple className={`scale-150  `} />
@@ -112,12 +130,12 @@ const Navbar = () => {
 
              {/* mobile navbar  */}
              {menu && (
-             <motion.div 
+             <div 
               initial={{opacity:0 , y:20}}
               animate = {{opacity:100 ,y:20}}
                transition={{duration:0.6,ease:"easeIn"}}
 
-               className={`absolute flex md:hidden bg-[#0f172a]  flex-col backdrop-blur-2xl z-50 duration-300 mx-2 h-screen w-fit px-6 py-5 gap-6 top-0 right-0    transform transition-transform  `}>
+               className={`absolute flex md:hidden bg-[#0f172a]  flex-col backdrop-blur-2xl z-50 duration-300 mx-2 h-screen w-fit  px-6 py-5 gap-8 top-0 right-0    transform transition-transform  `}>
                  <button onClick={()=>
                 closePopup()
               } className="absolute  cursor-pointer  scale-125 top-4 left-4 text-white opacity-60 hover:opacity-100  transition duration-300">
@@ -126,12 +144,12 @@ const Navbar = () => {
                 </svg>    
               </button>
               <ul className='flex flex-col mt-[9vh] gap-2 '>
-            <a ><li className='cursor-pointer opacity-70 hover:opacity-100'>Home </li></a>
-            <li className='cursor-pointer opacity-70 hover:opacity-100'>About </li>
-            <li className='cursor-pointer opacity-70 hover:opacity-100'>Service </li>
-            <li className='cursor-pointer opacity-70 hover:opacity-100'>Contact Us  </li>
+           <li onClick={()=>handlescroll2('Home')} className='cursor-pointer opacity-70 hover:opacity-100'>Home </li>
+           <li onClick={()=>handlescroll2('About')} className='cursor-pointer opacity-70 hover:opacity-100'>About </li>
+            <li onClick={()=>handlescroll2('service')} className='cursor-pointer opacity-70 hover:opacity-100'>Service </li> 
+          <li onClick={()=>handlescroll2('Contact')} className='cursor-pointer opacity-70 hover:opacity-100'>Contact Us  </li> 
               </ul>
-             </motion.div>
+             </div>
              )}
           </div>
           

@@ -36,7 +36,7 @@ const  Hero = () => {
     },[inview,scrollingdown,controls]);
 
     return (
-        <div  className=' min-h-screen  w-full    '>
+        <div id='Home' className=' min-h-screen  w-full    '>
           
 
             <Navbar />

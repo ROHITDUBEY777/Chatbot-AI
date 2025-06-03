@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 const cards = () => {
 const refcard = useRef(null);
+const reftext = useRef(null);
 const [prevscroll,setprevscroll] = useState(0);
 const [scrollingdown,setscrollingdown]   = useState(false);
  const inViewcard = useInView(refcard, {once: true, amount: 0.5})
@@ -33,10 +34,17 @@ const [scrollingdown,setscrollingdown]   = useState(false);
 
 
   return (
-    <>
-     <h1 className='poppins text-white mt-[15vh] text-center text-5xl mb-8 '>About</h1>
+    <div 
+   
+    id='About' >
+     <motion.h1 
+      ref={reftext}
+      initial={{opacity:0.2,y:40}}
+      animate={{opacity:1,y:0}}
+      transition={{duration:0.6,ease:"easeOut"}}
+     className='poppins text-white mt-[15vh] text-center text-5xl mb-8 '>About</motion.h1>
     <motion.div
-        ref={refcard}
+         ref={refcard}
           initial={{opacity:0,y:40}}
           animate={controls}
           transition={{duration:0.6,ease:"easeOut"}}
@@ -57,7 +65,7 @@ const [scrollingdown,setscrollingdown]   = useState(false);
 
       
     </motion.div>
-       </>
+       </div>
   )
 }
 
