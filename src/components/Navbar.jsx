@@ -68,30 +68,30 @@ const Navbar = ({darkmode,setdarkmode}) => {
  
   return (
     <div >
-     <nav className='flex flex-row  text-white top-0 justify-center fixed  dark:backdrop-blur-3xl z-50  px-6  py-5   w-full '>
-        <ul className='flex flex-row text-2xl  justify-between md:w-screen w-full   '>
+     <nav className={`flex flex-row  text-white top-0 justify-center fixed ${darkmode?" backdrop-blur-3xl":"bg-white"} backdrop-blur-3xl z-50  px-6  py-5   w-full `}>
+        <ul className={`flex flex-row text-2xl   justify-between md:w-screen w-full ${darkmode?"text-white":"text-black   "}  `}>
             
 
 
            
             <li className='  font-bold cursor-normal   text-xl md:text-xl'>CHATBOT </li>
-            <div className='   flex-row md:flex md:text-xl lg:text-2xl  md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
+            <div className='   flex-row md:flex md:text-xl lg:text-2xl   md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
 
-            <li onClick={()=>handlescroll('Home')} className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>Home </li>
-            <li onClick={()=>handlescroll('About')} className='cursor-pointer opacity-70 hover:opacity-100 hover:text-yellow-400'>About </li>
-            <li onClick={()=>handlescroll('service')} className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Service </li>
-            <li onClick={()=>handlescroll('Contact')} className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Contact Us  </li>
+            <li onClick={()=>handlescroll('Home')} className='cursor-pointer  hover:text-yellow-400'>Home </li>
+            <li onClick={()=>handlescroll('About')} className='cursor-pointer hover:text-yellow-400'>About </li>
+            <li onClick={()=>handlescroll('service')} className='cursor-pointer   hover:text-yellow-400'>Service </li>
+            <li onClick={()=>handlescroll('Contact')} className='cursor-pointer   hover:text-yellow-400'>Contact Us  </li>
             </div>
           <div className='flex gap-2'>
             <button onClick={()=>
               setdarkmode(!darkmode)
-            } className='px-2 bg-black py-2  cursor-pointer '>
+            } className='px-2  py-2  cursor-pointer '>
               {darkmode? <MdOutlineLightMode /> :<MdDarkMode />}
             </button>
 
 
  <motion.button   onClick={()=>
-               openpopup() } whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-yellow-400 hover:shadow-xl hover:shadow-yellow-500/50  px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white   md:py-2  '>
+               openpopup() } whileTap={{scale:1.2 }} className={`md:text-base lg:text-xl rounded-full ${darkmode?"text-white":"text-black bg-black border-black"} hover:bg-yellow-400 hover:shadow-xl hover:shadow-yellow-500/50  px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white   md:py-2  `} >
           
                 log-in
                 </motion.button> 
