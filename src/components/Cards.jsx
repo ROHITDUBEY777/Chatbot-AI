@@ -36,18 +36,19 @@ const [scrollingdown,setscrollingdown]   = useState(false);
   return (
     <div 
    
-    id='About' >
+     className='' >
      <motion.h1 
       ref={reftext}
       initial={{opacity:0.2,y:40}}
       animate={{opacity:1,y:0}}
-      transition={{duration:0.6,ease:"easeOut"}}
-     className='poppins text-white mt-[15vh] text-center text-5xl mb-8 '>About</motion.h1>
+      transition={{duration:1,ease:"easeOut"}}
+      id='About'
+     className='poppins text-white mt-[15vh] text-center text-5xl mb-8  '>About</motion.h1>
     <motion.div
          ref={refcard}
           initial={{opacity:0,y:40}}
           animate={controls}
-          transition={{duration:0.6,ease:"easeOut"}}
+          transition={{duration:1,ease:"easeOut"}}
 
            className='flex flex-col gap-34   justify-center   px-4  lg:flex-row md:gap-24   md:px-4 lg:px-24  min-h-screen  text-white    '>
        {cardsobj.map((item)=>(

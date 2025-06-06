@@ -1,12 +1,14 @@
-import React, { useActionState, useState } from 'react'
+import React, { useActionState, useEffect, useState } from 'react'
 import { IoMdMenu } from "react-icons/io";
 import { FaApple } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
 import { FaGoogle } from "react-icons/fa";
+import { MdOutlineLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 
 import {domAnimation, easeIn, m, motion} from 'motion/react';
 
-const Navbar = () => {
+const Navbar = ({darkmode,setdarkmode}) => {
 
   
   const[menu,setmenu] = useState(false);
@@ -53,10 +55,20 @@ const Navbar = () => {
     
   }
   
+  useEffect(()=>{
+    if(darkmode)
+    {
+      document.documentElement.classList.add('dark');
+    }
+    else
+    {
+   document.documentElement.classList.remove('dark');
+    }
+  })
  
   return (
-    <div>
-     <nav className='flex flex-row  text-white top-0 justify-center fixed backdrop-blur-3xl z-50  px-6  py-5   w-full '>
+    <div >
+     <nav className='flex flex-row  text-white top-0 justify-center fixed  dark:backdrop-blur-3xl z-50  px-6  py-5   w-full '>
         <ul className='flex flex-row text-2xl  justify-between md:w-screen w-full   '>
             
 
@@ -71,9 +83,15 @@ const Navbar = () => {
             <li onClick={()=>handlescroll('Contact')} className='cursor-pointer opacity-70 hover:opacity-100  hover:text-yellow-400'>Contact Us  </li>
             </div>
           <div className='flex gap-2'>
+            <button onClick={()=>
+              setdarkmode(!darkmode)
+            } className='px-2 bg-black py-2  cursor-pointer '>
+              {darkmode? <MdOutlineLightMode /> :<MdDarkMode />}
+            </button>
+
 
  <motion.button   onClick={()=>
-               openpopup() } whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-yellow-400 px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white   md:py-2  '>
+               openpopup() } whileTap={{scale:1.2 }} className='md:text-base lg:text-xl rounded-full hover:bg-yellow-400 hover:shadow-xl hover:shadow-yellow-500/50  px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white   md:py-2  '>
           
                 log-in
                 </motion.button> 
@@ -107,12 +125,12 @@ const Navbar = () => {
                '
                className='w-full border  border-white py-1 text-base px-4 '
                />
-               <motion.button whileTap={{scale:1.1}} className='w-full cursor-pointer  text-base text-black bg-[#fafafa] py-1 rounded-md mt-[2vh]'>login</motion.button>
+               <motion.button whileTap={{scale:1.1}} className='w-full cursor-pointer text-base text-black bg-[#fafafa]  py-1 rounded-md mt-[2vh]'>login</motion.button>
                <p className='text-base opacity-70 text-center mt-2'>or continue with </p>
                <div className='flex flex-row px-2 py-4 justify-between w-full '>
-                <FaApple className={`scale-150  `} />
-                <FaGoogle className={`scale-125  `}  />
-                <FaMeta  className={`scale-125    `} />
+                <FaApple className={`scale-150 cursor-pointer `} />
+                <FaGoogle className={`scale-125 cursor-pointer   `}  />
+                <FaMeta  className={`scale-125  cursor-pointer  `} />
                </div>
                <p className='text-base text-center'>Don't have an account  <a href="" className='underline'>signup</a>
                </p>
