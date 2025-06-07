@@ -2,6 +2,7 @@ import {useState,useEffect,useRef} from 'react'
 import Navbar from './Navbar';
 import {   motion ,useAnimate,useAnimation,useInView } from 'framer-motion';
 import Ai from "../assets/AI.jpg"
+// import App from './spline';
 
 
 
@@ -39,8 +40,11 @@ const  Hero = ({darkmode,setdarkmode}) => {
     return (
         <div  id='Home'  className={`min-h-screen  w-full ${darkmode?"text-white":"text-black opacity-100"}   `}>
           
-
+            
             <Navbar darkmode={darkmode} setdarkmode={setdarkmode}/>
+            {/* <div className='mt-[11vh] hidden md:flex  '>
+            <App />
+            </div> */}
             <motion.h1
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}
@@ -52,7 +56,7 @@ const  Hero = ({darkmode,setdarkmode}) => {
               initial = {{opacity : 0 , y:20 }}
               animate = {{opacity:1,y:0}}
               transition={{duration : 1 , ease : "easeOut"}}
-              src={Ai} className='rounded-lg   w-3/2 md:w-3/2 lg:w-1/2' />
+              src={Ai} className='rounded-lg z-10  w-3/2 md:w-3/2 lg:w-1/2' />
               <div className='flex flex-col items-center gap-4   '>
 
             <motion.p

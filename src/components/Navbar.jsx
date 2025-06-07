@@ -153,7 +153,7 @@ const Navbar = ({darkmode,setdarkmode}) => {
               animate = {{opacity:100 ,y:20}}
                transition={{duration:0.6,ease:"easeIn"}}
 
-               className={`absolute flex md:hidden ${darkmode?" bg-[#0f172a] ":" bg-[#f1f5f9] text-black border "} flex-col backdrop-blur-2xl z-50 duration-300  h-screen w-41  px-6 py-5 gap-8 top-0 right-0    transform transition-transform  `}>
+               className={`absolute flex md:hidden ${darkmode?" bg-[#0f172a] ":" bg-[#f1f5f9] text-black border "} flex-col backdrop-blur-2xl z-50 duration-300  h-screen w-51  px-6 py-5 gap-8 top-0 right-0    transform transition-transform  `}>
                  <button onClick={()=>
                 closePopup()
               } className="absolute  cursor-pointer  scale-125 top-4 left-4  opacity-60 hover:opacity-100  transition duration-300">
