@@ -68,7 +68,7 @@ const Navbar = ({darkmode,setdarkmode}) => {
  
   return (
     <div >
-     <nav className={`flex flex-row  text-white top-0 justify-center fixed ${darkmode?" backdrop-blur-3xl":"bg-white"} backdrop-blur-3xl z-50  px-6  py-5   w-full `}>
+     <nav className={`flex flex-row  text-white top-0 justify-center fixed ${darkmode?" backdrop-blur-3xl":"backdrop-blur-3xl"}  z-50  px-6  py-5   w-full `}>
         <ul className={`flex flex-row text-2xl   justify-between md:w-screen w-full ${darkmode?"text-white":"text-black   "}  `}>
             
 

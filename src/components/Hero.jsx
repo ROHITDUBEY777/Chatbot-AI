@@ -2,7 +2,8 @@ import {useState,useEffect,useRef} from 'react'
 import Navbar from './Navbar';
 import {   motion ,useAnimate,useAnimation,useInView } from 'framer-motion';
 import Ai from "../assets/AI.jpg"
-// import App from './spline';
+import App from './spline';
+import image from "../assets/bgimage.jpg";
 
 
 
@@ -35,16 +36,20 @@ const  Hero = ({darkmode,setdarkmode}) => {
         }
 
     },[inview,scrollingdown,controls]);
-
+    
+    const isMobile = window.innerWidth<768;
 
     return (
-        <div  id='Home'  className={`min-h-screen  w-full ${darkmode?"text-white":"text-black opacity-100"}   `}>
+        <div  id='Home'  className={`min-h-screen  w-full ${darkmode?"text-white":"text-black opacity-100"}        `}>
           
+       
             
             <Navbar darkmode={darkmode} setdarkmode={setdarkmode}/>
-            {/* <div className='mt-[11vh] hidden md:flex  '>
-            <App />
-            </div> */}
+            <div className=' h-screen bg-cover'>
+            <p className='text-5xl md:text-6xl mt-[11vh]  font-[Poppins] absolute  mx-auto px-6 py-10 text-center'>Explore Chat and Connect</p>
+            {/* <App /> */}
+            {isMobile ?"":<App />}
+            </div>
             <motion.h1
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}
