@@ -35,7 +35,7 @@ function App() {
       <API darkMode={darkmode} />
        <Cards darkmode={darkmode} />
      
-      <Footer/>
+      <Footer darkMode={darkmode} />
   </div>
           
   

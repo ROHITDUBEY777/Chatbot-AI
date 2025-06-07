@@ -77,7 +77,7 @@ const Navbar = ({darkmode,setdarkmode}) => {
             <li className='  font-bold cursor-normal   text-xl md:text-xl'>CHATBOT </li>
             <div className='   flex-row md:flex md:text-xl lg:text-2xl   md:gap-6 lg:gap-18 xl:gap-22 hidden justify-center'>
 
-            <li onClick={()=>handlescroll('Home')} className='cursor-pointer  hover:text-yellow-400'>Home </li>
+            <li onClick={()=>handlescroll('Home')} className='cursor-pointer   hover:text-yellow-400'>Home </li>
             <li onClick={()=>handlescroll('About')} className='cursor-pointer hover:text-yellow-400'>About </li>
             <li onClick={()=>handlescroll('service')} className='cursor-pointer   hover:text-yellow-400'>Service </li>
             <li onClick={()=>handlescroll('Contact')} className='cursor-pointer   hover:text-yellow-400'>Contact Us  </li>
@@ -91,7 +91,7 @@ const Navbar = ({darkmode,setdarkmode}) => {
 
 
  <motion.button   onClick={()=>
-               openpopup() } whileTap={{scale:1.2 }} className={`md:text-base lg:text-xl rounded-full ${darkmode?"text-white":"text-black bg-black border-black"} hover:bg-yellow-400 hover:shadow-xl hover:shadow-yellow-500/50  px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer   text-white   md:py-2  `} >
+               openpopup() } whileTap={{scale:1.2 }} className={`md:text-base lg:text-xl rounded-full ${darkmode?"text-white":"text-black"} hover:bg-yellow-400 hover:shadow-xl hover:shadow-yellow-500/50  px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer     md:py-2  `} >
           
                 log-in
                 </motion.button> 
