@@ -96,14 +96,14 @@ return response.data.candidates[0].content.parts[0].text;
  
 
   return (
-    <div id='service' className={`flex  flex-col w-full items-center  ${darkMode?"text-white":"text-black"}  mt-[15vh]   justify-center min-h-screen `}>
+    <div id='service' className={` flex  flex-col w-full items-center  ${darkMode?"text-white":"text-black"}   mt-[15vh]   justify-center min-h-screen `}>
       <div className='items-center justify-center  w-full '>
     <motion.h1 
 
      initial={{opacity:0,y:40}}
      animate={{opacity:1,y:0}}
      transition={{duration:1,ease:"easeOut"}}
-    className={`poppins flex text-5xl text-center  mb-10   justify-center `}>Chat smarter with us.</motion.h1> 
+    className={`poppins flex text-5xl text-center mx-4 mb-10   justify-center `}>Chat smarter with us.</motion.h1> 
     <motion.p 
      ref={reftext}
      initial = {{opacity:0 , y: 40}}
@@ -117,9 +117,9 @@ return response.data.candidates[0].content.parts[0].text;
      animate={controlscard}
      transition={{duration:1,ease: "easeOut"}}
     
-    className={`flex flex-col w-full    justify-center md:w-[41rem] md:mx-15 lg:w-9/10 px-4 ${darkMode?"text-white bg-[#1e293b]":"text-black bg-[#fafaf9]"} hover:border-1  z-10 hover:border-yellow-400 border    py-6    mb-8 md:px-16 md:py-10     rounded-xl     `}>
+    className={`flex flex-col w-full     justify-center md:w-[41rem] md:mx-15 lg:w-9/10 px-6   ${darkMode?"text-white  hover:border-yellow-400  bg-[#1e293b]":"text-black bg-[#fafaf9]"} hover:border-1  z-10   py-6 border    mb-8 md:px-16 md:py-10     rounded-xl     `}>
       {reply && (
-        <div className='mt-[4vh] p-4 rounded shadow '>
+        <div className='mt-[4vh]  p-4 rounded shadow '>
           <h1 className='text-base md:text-xl mb-2'>Ask anything, we’ve got answers.</h1>
           <h2 className='text-base    ' > Response : </h2>
           <p className='md:text-base text-base py-4 '>{"Thinking" ? reply : "loading"}</p>
@@ -130,7 +130,7 @@ return response.data.candidates[0].content.parts[0].text;
       <input type="text"  placeholder='Ask a question ' 
         value={input}
         onChange={(e)=> setinput(e.target.value)}
-        className='text-base text-black border bg-[#c4b5fd] w-full md:w-[42rem] mt-[2vh] px-4 mx-2 py-2 '  />
+        className='text-base text-black border bg-[#c4b5fd] w-full md:w-[42rem] mt-[2vh] px-4 py-2 '  />
         <motion.button type='button' whileTap={{scale:1.1}} onClick={(e)=>handlesubmit(e.preventDefault())} className='mt-[3vh] rounded-full border  hover:shadow-lg  hover:shadow-yellow-500/50 transition-all duration-300 ease-in-out  hover:bg-yellow-400  hover:text-black cursor-pointer px-4 py-3 md:py-3 text-xl  w-full md:w-1/6 '> {loading ? "Thinking....." : "Search"}  </motion.button>
         </div>
     </motion.div>

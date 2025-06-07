@@ -80,39 +80,39 @@ const Navbar = ({darkmode,setdarkmode}) => {
             <li onClick={()=>handlescroll('Home')} className='cursor-pointer   hover:text-yellow-400'>Home </li>
             <li onClick={()=>handlescroll('About')} className='cursor-pointer hover:text-yellow-400'>About </li>
             <li onClick={()=>handlescroll('service')} className='cursor-pointer   hover:text-yellow-400'>Service </li>
-            <li onClick={()=>handlescroll('Contact')} className='cursor-pointer   hover:text-yellow-400'>Contact Us  </li>
+            <li onClick={()=>handlescroll('Contact')} className='cursor-pointer   hover:text-yellow-400'>Contact  </li>
             </div>
-          <div className='flex gap-2'>
+          <div className='flex '>
             <button onClick={()=>
               setdarkmode(!darkmode)
-            } className='px-2  py-2  cursor-pointer '>
+            } className='  py-2  cursor-pointer '>
               {darkmode? <MdOutlineLightMode /> :<MdDarkMode />}
             </button>
 
-
+          
  <motion.button   onClick={()=>
-               openpopup() } whileTap={{scale:1.2 }} className={`md:text-base lg:text-xl rounded-full ${darkmode?"text-white":"text-black"} hover:bg-yellow-400 hover:shadow-xl hover:shadow-yellow-500/50  px-2 py-1 md:px-4 hover:text-black mx-4 md:flex opacity-70 hover:opacity-100 border cursor-pointer     md:py-2  `} >
+               openpopup() } whileTap={{scale:1.2 }} className={`md:text-base lg:text-xl  rounded-full ${darkmode?"text-white":"text-black"} hover:bg-yellow-400 hover:shadow-xl hover:shadow-yellow-500/50  px-3 text-base py-1 md:px-4 hover:text-black mx-4 md:flex  border cursor-pointer     md:py-2  `} >
           
                 log-in
                 </motion.button> 
                {/* popup for sign in */}
-               <div className={`flex bg-[#171717]  rounded-lg absolute z-50  py-9 h-fit  right-4 ${popup ? "opacity-100 scale-100 ":"opacity-0 hidden invisible"} `}>
-               <div className='px-10 text-white '>
+               <div className={`flex  ${darkmode?"bg-[#171717] text-white":"bg-white border text-black "} rounded-lg absolute z-50  py-9 h-fit  right-6 ${popup ? "opacity-100 scale-100 ":"opacity-0 hidden invisible"} `}>
+               <div className='px-10  '>
                       <button onClick={()=>
                       closePopup2()
-                    } className="  cursor-pointer  scale-150 top-4 left-4 text-white opacity-60 hover:opacity-100  transition duration-300">
+                    } className="  cursor-pointer  scale-150 top-4 left-4  md:opacity-60 md:hover:opacity-100  transition duration-300">
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
                       </svg>    
                     </button>
-               <h1 className='text-white text-xl'>Welcome back</h1>
+               <h1 className='text-xl'>Welcome back</h1>
                <p className='text-base mb-2'>Login to your account</p>
                <h2 className='text-xl'>Email</h2>
                <input 
                 value={input}
 
                 onChange={(e)=>setinput(e.target.value)}
-                 className='w-full text-white border py-1 border-white text-base px-4'
+                 className='w-full  border py-1  text-base px-4'
                  placeholder='example@.com'
                 />
                 <h2 className='mt-[2vh] text-xl'>Password</h2>
@@ -123,9 +123,9 @@ const Navbar = ({darkmode,setdarkmode}) => {
                placeholder='Enter your password here 
                
                '
-               className='w-full border  border-white py-1 text-base px-4 '
+               className='w-full border   py-1 text-base px-4 '
                />
-               <motion.button whileTap={{scale:1.1}} className='w-full cursor-pointer text-base text-black bg-[#fafafa]  py-1 rounded-md mt-[2vh]'>login</motion.button>
+               <motion.button whileTap={{scale:1.1}} className={`w-full cursor-pointer text-base ${darkmode?"bg-[#fafafa] text-black ":"bg-black text-white"}  py-1 rounded-md mt-[2vh]`}>login</motion.button>
                <p className='text-base opacity-70 text-center mt-2'>or continue with </p>
                <div className='flex flex-row px-2 py-4 justify-between w-full '>
                 <FaApple className={`scale-150 cursor-pointer `} />
@@ -153,19 +153,19 @@ const Navbar = ({darkmode,setdarkmode}) => {
               animate = {{opacity:100 ,y:20}}
                transition={{duration:0.6,ease:"easeIn"}}
 
-               className={`absolute flex md:hidden bg-[#0f172a]  flex-col backdrop-blur-2xl z-50 duration-300 mx-2 h-screen w-fit  px-6 py-5 gap-8 top-0 right-0    transform transition-transform  `}>
+               className={`absolute flex md:hidden ${darkmode?" bg-[#0f172a] ":" bg-[#f1f5f9] text-black border "} flex-col backdrop-blur-2xl z-50 duration-300  h-screen w-41  px-6 py-5 gap-8 top-0 right-0    transform transition-transform  `}>
                  <button onClick={()=>
                 closePopup()
-              } className="absolute  cursor-pointer  scale-125 top-4 left-4 text-white opacity-60 hover:opacity-100  transition duration-300">
+              } className="absolute  cursor-pointer  scale-125 top-4 left-4  opacity-60 hover:opacity-100  transition duration-300">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>    
               </button>
               <ul className='flex flex-col mt-[9vh] gap-2 '>
-           <li onClick={()=>handlescroll2('Home')} className='cursor-pointer opacity-70 hover:opacity-100'>Home </li>
-           <li onClick={()=>handlescroll2('About')} className='cursor-pointer opacity-70 hover:opacity-100'>About </li>
-            <li onClick={()=>handlescroll2('service')} className='cursor-pointer opacity-70 hover:opacity-100'>Service </li> 
-          <li onClick={()=>handlescroll2('Contact')} className='cursor-pointer opacity-70 hover:opacity-100'>Contact Us  </li> 
+           <li onClick={()=>handlescroll2('Home')} className='cursor-pointer '>Home </li>
+           <li onClick={()=>handlescroll2('About')} className='cursor-pointer '>About </li>
+            <li onClick={()=>handlescroll2('service')} className='cursor-pointer '>Service </li> 
+          <li onClick={()=>handlescroll2('Contact')} className='cursor-pointer '>Contact   </li> 
               </ul>
              </div>
              )}

@@ -50,14 +50,14 @@ const [scrollingdown,setscrollingdown]   = useState(false);
           animate={controls}
           transition={{duration:1,ease:"easeOut"}}
 
-           className={`flex flex-col gap-34   justify-center ${darkmode?"text-white ":"text-black "}   px-4  lg:flex-row md:gap-24   md:px-4 lg:px-24  min-h-screen     `}>
+           className={`flex flex-col gap-34   justify-center ${darkmode?"text-white ":"text-black "}   px-8  lg:flex-row md:gap-24   md:px-4 lg:px-24  min-h-screen     `}>
        {cardsobj.map((item)=>(
          <div
         
            key={item.id} className={` ${darkmode?" bg-[#09090b]":"bg-[#fafaf9] "} md:mx-24 lg:mx-0  md:h-fit  border  border-[#27272a]  hover:border-1 md:hover:border-yellow-400 hover: rounded-lg   cursor-pointer `}>
          <ul className=' w-fit h-fit md:h-fit  justify-between items-center text-center  gap- '>
-          <li className='mt-[4vh]  md:px-6 lg:mt-[8vh]   mb-11 text-xl'>{item.title}</li>
-          <p className={`rounded-lg  text-center py-4 md:px-6 xl:h-[24rem]  px-4 md:py-10  xl:px-12 ${darkmode?"bg-[#27272a] ":"bg-[#e7e5e4]"}   text-base`}>{item.description}</p>
+          <li className='mt-[4vh]  md:px-6 lg:mt-[8vh]   mb-11 l'>{item.title}</li>
+          <p className={`rounded-lg  text-center py-4 md:px-6 xl:h-[24rem]  px-4 md:py-10  xl:px-12 ${darkmode?"bg-[#27272a] ":"bg-[#e7e5e4] "}   `}>{item.description}</p>
          </ul>
          </div>
        ))}
@@ -70,4 +70,4 @@ const [scrollingdown,setscrollingdown]   = useState(false);
   )
 }
 
-export default Cards
+export default Cards;

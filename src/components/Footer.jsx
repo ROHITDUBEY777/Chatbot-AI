@@ -15,8 +15,8 @@ const Footer = ({darkMode}) => {
 
   return (
     <>
-    <div id='Contact' className={`w-full  backdrop-blur-xl z-50 text-center py-3`}>
-      <p className={` ${darkMode ? "text-white":"text-black"} text-base`}> powered by Chatbot-ai </p>
+    <div id='Contact' className={`w-full mt-[11vh] backdrop-blur-xl z-50 text-center py-3`}>
+      <p className={` ${darkMode ? "text-white":"text-black"} text-base`}> powered by Chatbot </p>
     </div>
   
     </>
