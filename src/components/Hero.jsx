@@ -2,8 +2,6 @@ import {useState,useEffect,useRef} from 'react'
 import Navbar from './Navbar';
 import {   motion ,useAnimate,useAnimation,useInView } from 'framer-motion';
 import Ai from "../assets/AI.jpg"
-import App from './spline';
-import image from "../assets/bgimage.jpg";
 
 
 
@@ -45,14 +43,7 @@ const  Hero = ({darkmode,setdarkmode}) => {
        
             
             <Navbar darkmode={darkmode} setdarkmode={setdarkmode}/>
-            <div className='h-screen bg-cover'>
-            <p className='text-5xl md:text-6xl mt-[11vh]  font-[Poppins] md:absolute  mx-auto px-6 py-10 text-center'>Explore Chat and Connect</p>
-            {/* <App /> */}
-           
-            {isMobile ?<img src={image} className={` scale-100  px-6`} /> :<App />}
-             <p className='text-xl text-center md:hidden px-6 mt-[4vh]'>Dive into real-time interaction with AI.
-                Visual intelligence meets intuitive design.</p>
-            </div>
+          
             <motion.h1
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}

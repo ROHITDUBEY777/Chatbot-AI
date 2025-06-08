@@ -96,7 +96,7 @@ const Navbar = ({darkmode,setdarkmode}) => {
                 log-in
                 </motion.button> 
                {/* popup for sign in */}
-               <div className={`flex  ${darkmode?"bg-[#171717] text-white":"bg-white border text-black "} rounded-lg absolute z-50  py-9 h-fit  right-5  ${popup ? "opacity-100 scale-100 ":"opacity-0 hidden invisible"} `}>
+               <div className={`flex  ${darkmode?"bg-[#171717] text-white":"bg-white border text-black "} rounded-lg absolute z-50  py-9 h-fit  right-2 ${popup ? "opacity-100 scale-100 ":"opacity-0 hidden invisible"} `}>
                <div className='px-10  '>
                       <button onClick={()=>
                       closePopup2()
