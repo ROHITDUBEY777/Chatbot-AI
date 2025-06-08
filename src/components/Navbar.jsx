@@ -113,7 +113,7 @@ const Navbar = ({darkmode,setdarkmode}) => {
 
                 onChange={(e)=>setinput(e.target.value)}
                  className='w-full  border py-1  text-base px-4'
-                 placeholder='example@.com'
+                 placeholder='example@gmail.com'
                 />
                 <h2 className='mt-[2vh] text-xl'>Password</h2>
                <input 
@@ -125,7 +125,7 @@ const Navbar = ({darkmode,setdarkmode}) => {
                '
                className='w-full border   py-1 text-base px-4 '
                />
-               <motion.button whileTap={{scale:1.1}} className={`w-full cursor-pointer text-base ${darkmode?"bg-[#fafafa] text-black ":"bg-black text-white"}  py-1 rounded-md mt-[2vh]`}>login</motion.button>
+               <motion.button whileTap={{scale:1.1}} className={`w-full cursor-pointer text-base ${darkmode?"bg-[#fafafa] text-black ":"bg-black text-white"}  py-2 rounded-md mt-[2vh]`}>login</motion.button>
                <p className='text-base opacity-70 text-center mt-2'>or continue with </p>
                <div className='flex flex-row px-2 py-4 justify-between w-full '>
                 <FaApple className={`scale-150 cursor-pointer `} />

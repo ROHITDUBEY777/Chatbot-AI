@@ -2,6 +2,7 @@ import {useState,useEffect,useRef} from 'react'
 import Navbar from './Navbar';
 import {   motion ,useAnimate,useAnimation,useInView } from 'framer-motion';
 import Ai from "../assets/AI.jpg"
+import { Behavior } from '@google/genai';
 
 
 
@@ -35,7 +36,13 @@ const  Hero = ({darkmode,setdarkmode}) => {
 
     },[inview,scrollingdown,controls]);
     
-    const isMobile = window.innerWidth<768;
+    const handlescroll2 = (id) =>{
+        const element = document.getElementById(id);
+        if(element)
+        {
+            element.scrollIntoView({behavior:"smooth"})
+        }
+    }
 
     return (
         <div  id='Home'  className={`min-h-screen  w-full ${darkmode?"text-white":"text-black opacity-100"}        `}>
@@ -65,7 +72,7 @@ const  Hero = ({darkmode,setdarkmode}) => {
              transition={{ duration:1 , ease : 'easeOut'}}
              
              className={` mt-[4vh] md:mt-[11vh] lg:text-xl xl:text-xl    text-base  md:text-xl text-center px-3    md:px-16 `} >Welcome to our Chatbot AI - an intelligent, conversational assistant designed to provide instant, reliable, and human-like interactions. Built with advanced natural language processing (NLP) and machine learning technologies, this AI is capable of understanding context, answering questions, and assisting users in real-time across a wide range of topics.</motion.p>  
-                   <motion.button
+                   <motion.button onClick={()=>handlescroll2('service')}
                     initial={{opacity:0,y:20}}
                     animate={{opacity:1,y:0}}
                     transition={{duration:1,ease:"easeOut"}}

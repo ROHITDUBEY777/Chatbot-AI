@@ -50,7 +50,7 @@ const API = ({darkMode }) => {
   const handlesubmit = async (e) => {
 
    
-   if(input === " " ){
+   if(input === "" ){
      alert('Please ask a question before searching');
     e.preventDefault();
    }
@@ -117,12 +117,12 @@ return response.data.candidates[0].content.parts[0].text;
      animate={controlscard}
      transition={{duration:1,ease: "easeOut"}}
     
-    className={`flex flex-col w-fit  mx-auto      justify-center md:w-[41rem] md:mx-15 lg:w-9/10 px-10  ${darkMode?"text-white  hover:border-yellow-400  bg-[#1e293b]":"text-black bg-[#fafaf9]"} hover:border-1  z-10   py-6 border    mb-8 md:px-16 md:py-10     rounded-xl     `}>
+    className={`flex flex-col w-full px-6  mx-       justify-center md:w-[41rem] md:mx-15 lg:w-9/10   ${darkMode?"text-white  hover:border-yellow-400  bg-[#1e293b]":"text-black bg-[#fafaf9]"} hover:border-1  z-10   py-6 border    mb-8 md:px-16 md:py-10     rounded-xl     `}>
       {reply && (
-        <div className='mt-[4vh]  p-4 rounded shadow '>
+        <div className='mt-[4vh]   rounded shadow '>
           <h1 className='text-base md:text-xl mb-2'>Ask anything, we’ve got answers.</h1>
           <h2 className='text-base    ' > Response : </h2>
-          <p className='md:text-base text-base py-4 '>{"Thinking" ? reply : "loading"}</p>
+          <p className='md:text-base text-base py-4  '>{"Thinking" ? reply : "loading"}</p>
           </div>
       )}
       <div className='flex flex-col md:flex-row md:gap-8 lg:flex-row xl:flex-row justify-between '>
@@ -131,7 +131,7 @@ return response.data.candidates[0].content.parts[0].text;
         value={input}
         onChange={(e)=> setinput(e.target.value)}
         className='text-base text-black border bg-[#c4b5fd] w-full md:w-[42rem] mt-[2vh] px-4 py-2 '  />
-        <motion.button type='button' whileTap={{scale:1.1}} onClick={(e)=>handlesubmit(e.preventDefault())} className='mt-[3vh] rounded-full border  hover:shadow-lg  hover:shadow-yellow-500/50 transition-all duration-300 ease-in-out  hover:bg-yellow-400  hover:text-black cursor-pointer px-4 py-3 md:py-3 text-xl  w-full md:w-1/6 '> {loading ? "Thinking....." : "Search"}  </motion.button>
+        <motion.button type='button' whileTap={{scale:1.1}} onClick={(e)=>handlesubmit(e.preventDefault())} className='mt-[3vh] rounded-full border  hover:shadow-lg  hover:shadow-yellow-500/50 transition-all duration-300 ease-in-out  hover:bg-yellow-400  hover:text-black cursor-pointer px-4 py-2 md:py-3 text-xl  w-full md:w-1/6 '> {loading ? "Thinking....." : "Search"}  </motion.button>
         </div>
     </motion.div>
         </div>
