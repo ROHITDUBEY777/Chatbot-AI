@@ -117,7 +117,7 @@ return response.data.candidates[0].content.parts[0].text;
      animate={controlscard}
      transition={{duration:1,ease: "easeOut"}}
     
-    className={`flex flex-col w-full     justify-center md:w-[41rem] md:mx-15 lg:w-9/10 px-6   ${darkMode?"text-white  hover:border-yellow-400  bg-[#1e293b]":"text-black bg-[#fafaf9]"} hover:border-1  z-10   py-6 border    mb-8 md:px-16 md:py-10     rounded-xl     `}>
+    className={`flex flex-col w-fit  mx-auto      justify-center md:w-[41rem] md:mx-15 lg:w-9/10 px-10  ${darkMode?"text-white  hover:border-yellow-400  bg-[#1e293b]":"text-black bg-[#fafaf9]"} hover:border-1  z-10   py-6 border    mb-8 md:px-16 md:py-10     rounded-xl     `}>
       {reply && (
         <div className='mt-[4vh]  p-4 rounded shadow '>
           <h1 className='text-base md:text-xl mb-2'>Ask anything, we’ve got answers.</h1>
