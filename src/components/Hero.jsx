@@ -1,9 +1,11 @@
 import {useState,useEffect,useRef} from 'react'
 import Navbar from './Navbar';
-import {   motion ,useAnimate,useAnimation,useInView } from 'framer-motion';
+import {   motion ,useAnimation,useInView } from 'framer-motion';
 import Ai from "../assets/AI.jpg"
 import { Behavior } from '@google/genai';
-
+import { gsap } from "gsap";
+    
+import { TextPlugin } from "gsap/TextPlugin";
 
 
 const  Hero = ({darkmode,setdarkmode}) => {
@@ -15,6 +17,28 @@ const  Hero = ({darkmode,setdarkmode}) => {
     const inview = useInView(ref,{once:true,amount:0.5});
     const controls = useAnimation();
 
+    const textref = useRef();
+
+    gsap.registerPlugin(TextPlugin);
+
+    useEffect(()=>{
+     const t1 = gsap.timeline({defaults:{ease:"bounce.out",duration:0.8}});
+     t1.to(textref.current ,{
+        scale:1.2,
+        rotate:5,
+        color:"#facc15",
+     })
+     .to(textref.current , {
+        text:"Ready to use it? then press get started ",
+        ease:"power1.inOut",
+        duration:2,
+     })
+     .to(textref.current,{
+        scale:1,
+        rotate:0,
+        color:"#10b981",
+     })
+        },[])
     useEffect(()=>{
         const handlescroll = ()=>{
              const current  = window.scrollY;
@@ -55,7 +79,8 @@ const  Hero = ({darkmode,setdarkmode}) => {
             initial = {{opacity:0,y:20}}
             animate = {{opacity:1,y:0}}
             transition={{duration : 1 , ease : "easeOut"}}
-            className={`poppins  text-5xl   font-bold opacity-80 md:text-5xl  text-center  mt-[32vh]`}>CHATBOT   </motion.h1>
+            ref={textref} 
+            className={`poppins  text-5xl px-4  font-bold opacity-80 md:text-5xl  text-center  mt-[32vh]`}>CHATBOT   </motion.h1>
             <div className='flex flex-col  lg:flex-row px-4 w-full  justify-between  md:px-10 mt-[6vh]'>
             
              <motion.img 

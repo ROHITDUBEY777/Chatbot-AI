@@ -1,4 +1,4 @@
-import React, { useActionState, useEffect, useState } from 'react'
+import React, { useActionState, useEffect, useState} from 'react'
 import { IoMdMenu } from "react-icons/io";
 import { FaApple } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
@@ -6,9 +6,12 @@ import { FaGoogle } from "react-icons/fa";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 
+
+
 import {domAnimation, easeIn, m, motion} from 'motion/react';
 
 const Navbar = ({darkmode,setdarkmode}) => {
+
 
   
   const[menu,setmenu] = useState(false);
