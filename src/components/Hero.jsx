@@ -29,7 +29,7 @@ const  Hero = ({darkmode,setdarkmode}) => {
         color:"#facc15",
      })
      .to(textref.current , {
-        text:"Ready to use it? then press get started ",
+        text:"Ready to dive in? Hit ‘Get Started’! ",
         ease:"power1.inOut",
         duration:2,
      })
