@@ -36,6 +36,7 @@ function App() {
        <Cards darkmode={darkmode} />
      
       <Footer darkMode={darkmode} />
+    
   </div>
           
   

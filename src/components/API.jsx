@@ -122,7 +122,9 @@ return response.data.candidates[0].content.parts[0].text;
         <div className='mt-[4vh]   rounded shadow '>
           <h1 className='text-base md:text-xl mb-2'>Ask anything, we’ve got answers.</h1>
           <h2 className='text-base    ' > Response : </h2>
+         
           <p className='md:text-base text-base py-4  '>{"Thinking" ? reply : "loading"}</p>
+        
           </div>
       )}
       <form onSubmit={(e)=>handlesubmit(e.preventDefault())}>
